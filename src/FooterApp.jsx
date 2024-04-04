@@ -16,7 +16,7 @@ export const Footer = () => {
         <Typography variant="body2" color="primary" align="center">
           &copy; <span>{currentYear}</span> Todos los derechos reservados.
           <Link href="https://github.com/AxMar1221" target="_blank" rel="noopener noreferrer" sx={{ marginLeft: 1 }}>
-            <IconButton arial-label="GitHunb">
+            <IconButton arial-label="GitHub">
               <GitHub />
             </IconButton>
           </Link>
