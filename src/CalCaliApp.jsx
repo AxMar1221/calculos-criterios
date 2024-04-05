@@ -23,7 +23,7 @@ export const CalCaliApp = () => {
         const typeValue = parseInt(value , 10);
 
         if (!isNaN(typeValue) && typeValue >= 0){
-            const maxPoints = [20, 20, 5, 20, 25];
+            const maxPoints = [20, 20, 5, 20, 25, 20];
 
             const limitPoints = Math.min(typeValue, maxPoints[idx]);
 
