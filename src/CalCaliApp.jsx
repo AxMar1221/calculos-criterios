@@ -1,7 +1,6 @@
 import { Checkbox, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from "@mui/material"
 import { useState } from "react"
 
-
 export const CalCaliApp = () => {
     const practicas = [
         "6: Be cool",
@@ -10,9 +9,8 @@ export const CalCaliApp = () => {
         "9: Packets",
         "10: HTTP and DNS",
         "11: Explorando Routers",
-        "Total (valor final)"
+        "Total"
     ];
-
     const checkboxes = [1, 2, 3, 4, 5, 6];
 
     const [values, setValue] = useState(Array(6).fill(''));
@@ -21,13 +19,22 @@ export const CalCaliApp = () => {
     const [totalPointsCheck, setTotalPointsCheck] = useState(0);
 
     const handleInput = (idx, value) => {
-        const newValue = [...values];
-        newValue[idx] = value;
-        setValue(newValue);
 
-        const points = newValue.reduce((acc, val) => acc + (parseFloat(val) || 0), 0);
-        const total = Math.floor((points / 110) * 40);
-        setTotalPoints(total)
+        const typeValue = parseInt(value , 10);
+
+        if (!isNaN(typeValue) && typeValue >= 0){
+            const maxPoints = [20, 20, 5, 20, 25];
+
+            const limitPoints = Math.min(typeValue, maxPoints[idx]);
+
+            const newValue = [...values];
+            newValue[idx] = limitPoints.toString();
+            setValue(newValue);
+            
+            const points = newValue.reduce((acc, val) => acc + (parseFloat(val) || 0), 0);
+            const total = Math.floor((points / 110) * 40);
+            setTotalPoints(total)
+        }
     }
 
     const handleCheck = (idx, isChecked) => {
@@ -46,8 +53,8 @@ export const CalCaliApp = () => {
 
     return (
         <div className="container" style={{ padding: '20px' }}>
-            <TableContainer component={Paper} >
-                <Table>
+            <TableContainer component={Paper} elevation={24}>
+                <Table >
                     <TableHead >
                         <TableRow sx={{ bgcolor: 'whitesmoke' }}>
                             <TableCell align="center">Prácticas</TableCell>
@@ -61,7 +68,7 @@ export const CalCaliApp = () => {
 
                             <TableCell>Calificación</TableCell>
                             {values.map((value, idx) => (
-                                <TableCell key={idx}>
+                                <TableCell align='center' key={idx}>
                                     <TextField
                                         type="number"
                                         value={value}
@@ -69,18 +76,17 @@ export const CalCaliApp = () => {
                                     />
                                 </TableCell>
                             ))}
-                            <TableCell align="center">{totalPoints}</TableCell>
+                            <TableCell align='center'>{totalPoints}</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell>Actividad entregada</TableCell>
                             {checkboxes.map((idx) => (
                                 <TableCell
                                     align='center'
+                                    checked={checkBox[idx - 1]}
+                                    onChange={(e) => handleCheck(idx - 1, e.target.checked)}
                                     key={idx}>
-                                    <Checkbox
-                                        checked={checkBox[idx - 1]}
-                                        onChange={(e) => handleCheck(idx - 1, e.target.checked)}
-                                    />
+                                    <Checkbox />
                                 </TableCell>
                             ))}
                             <TableCell align='center'>{totalPointsCheck}</TableCell>
