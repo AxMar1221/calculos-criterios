@@ -1,8 +1,7 @@
 
 import { Route, Routes } from "react-router-dom"
-import { Footer } from "./FooterApp"
-import { NavBarApp } from "./NavBarApp"
-import { PagesRouter } from "./PagesRouter"
+import { Footer, NavBarApp } from "../Shared"
+import { PagesRouter } from "../Pages/Router"
 
 
 export const RouterApp = () => {
