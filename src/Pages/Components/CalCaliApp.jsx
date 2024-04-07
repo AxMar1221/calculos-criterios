@@ -1,5 +1,6 @@
-import { Checkbox, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from "@mui/material"
+import { Button, Checkbox, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from "@mui/material"
 import { useState } from "react"
+import Swal from "sweetalert2";
 
 export const CalCaliApp = () => {
     const practicas = [
@@ -8,8 +9,7 @@ export const CalCaliApp = () => {
         "8: Tejiendo la red",
         "9: Packets",
         "10: HTTP and DNS",
-        "11: Explorando Routers",
-        "Total"
+        "11: Explorando Routers"
     ];
     const checkboxes = [1, 2, 3, 4, 5, 6];
 
@@ -20,9 +20,9 @@ export const CalCaliApp = () => {
 
     const handleInput = (idx, value) => {
 
-        const typeValue = parseInt(value , 10);
+        const typeValue = parseInt(value, 10);
 
-        if (!isNaN(typeValue) && typeValue >= 0){
+        if (!isNaN(typeValue) && typeValue >= 0) {
             const maxPoints = [20, 20, 5, 20, 25, 20];
 
             const limitPoints = Math.min(typeValue, maxPoints[idx]);
@@ -30,7 +30,7 @@ export const CalCaliApp = () => {
             const newValue = [...values];
             newValue[idx] = limitPoints.toString();
             setValue(newValue);
-            
+
             const points = newValue.reduce((acc, val) => acc + (parseFloat(val) || 0), 0);
             const total = Math.floor((points / 110) * 40);
             setTotalPoints(total)
@@ -48,7 +48,18 @@ export const CalCaliApp = () => {
     }
 
     const totalPointsSum = () => {
-        return totalPoints + totalPointsCheck;
+        Swal.fire({
+            icon: 'success',
+            title: 'Total de puntos',
+            html: `
+            <div>
+                <p>Prácticas realizadas en clase: ${totalPoints}</p>
+                <p>Trabajo independiente: ${totalPointsCheck}</p>
+                <p>Total: ${totalPoints + totalPointsCheck}</p>
+            </div>
+            `,
+            showConfirmButton: 'true'
+        })
     }
 
     return (
@@ -57,7 +68,7 @@ export const CalCaliApp = () => {
                 <Table >
                     <TableHead >
                         <TableRow sx={{ bgcolor: 'whitesmoke' }}>
-                            <TableCell align="center">Prácticas</TableCell>
+                            <TableCell align="center"></TableCell>
                             {practicas.map((cols) => (
                                 <TableCell align="center" key={cols}>{cols}</TableCell>
                             ))}
@@ -76,7 +87,6 @@ export const CalCaliApp = () => {
                                     />
                                 </TableCell>
                             ))}
-                            <TableCell align='center'>{totalPoints}</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell>Actividad entregada</TableCell>
@@ -89,11 +99,18 @@ export const CalCaliApp = () => {
                                     <Checkbox />
                                 </TableCell>
                             ))}
-                            <TableCell align='center'>{totalPointsCheck}</TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell colSpan={7} align="center">Total de puntos de los criterios Prácticas realizadas en clases y trabajo independiente</TableCell>
-                            <TableCell align='center'>{totalPointsSum()}</TableCell>
+                            <TableCell colSpan={5} align="center">Total de puntos de los criterios Prácticas realizadas en clases y trabajo independiente</TableCell>
+                            <TableCell align='center' colSpan={2}>
+                                <Button
+                                    variant='contained'
+                                    color='success'
+                                    onClick={() => totalPointsSum()}
+                                >
+                                    Calcular puntos
+                                </Button>
+                            </TableCell>
                         </TableRow>
                     </TableBody>
 
