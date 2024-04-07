@@ -11,7 +11,7 @@ export const HomePage = () => {
                 <CardMedia
                     component='img'
                     height='175'
-                    image='/public/profe-tachi.png'
+                    image='/profe-tachi.png'
                     alt='Profe-Tachi'
                 />
             </CardContent>
