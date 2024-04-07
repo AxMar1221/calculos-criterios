@@ -1,15 +1,11 @@
 
 import './App.css'
-import { CalCaliApp } from './CalCaliApp'
-import { Footer } from './FooterApp'
+import { RouterApp } from './RouterApp'
 
 function App() {
-
-
   return (
     <>
-      <CalCaliApp />
-      <Footer />
+      <RouterApp />
     </>
   )
 }

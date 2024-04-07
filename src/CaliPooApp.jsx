@@ -1,20 +1,19 @@
+
 import { Checkbox, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from "@mui/material"
 import { useState } from "react"
 
-export const CalCaliApp = () => {
+export const CaliPooApp = () => {
     const practicas = [
-        "6: Be cool",
-        "7: Welcome to internet",
-        "8: Tejiendo la red",
-        "9: Packets",
-        "10: HTTP and DNS",
-        "11: Explorando Routers",
+        "6: String Concatenation",
+        "7: Calculadora",
+        "8: If-Else by Switch-Case",
+        "9: Estructura de control",
         "Total"
     ];
-    const checkboxes = [1, 2, 3, 4, 5, 6];
+    const checkboxes = [1, 2, 3, 4];
 
-    const [values, setValue] = useState(Array(6).fill(''));
-    const [checkBox, setCheckBox] = useState(Array(6).fill(''));
+    const [values, setValue] = useState(Array(4).fill(''));
+    const [checkBox, setCheckBox] = useState(Array(4).fill(''));
     const [totalPoints, setTotalPoints] = useState(0);
     const [totalPointsCheck, setTotalPointsCheck] = useState(0);
 
@@ -23,7 +22,7 @@ export const CalCaliApp = () => {
         const typeValue = parseInt(value , 10);
 
         if (!isNaN(typeValue) && typeValue >= 0){
-            const maxPoints = [20, 20, 5, 20, 25, 20];
+            const maxPoints = [20, 20, 25, 20];
 
             const limitPoints = Math.min(typeValue, maxPoints[idx]);
 
@@ -32,7 +31,7 @@ export const CalCaliApp = () => {
             setValue(newValue);
             
             const points = newValue.reduce((acc, val) => acc + (parseFloat(val) || 0), 0);
-            const total = Math.floor((points / 110) * 40);
+            const total = Math.floor((points / 85) * 40);
             setTotalPoints(total)
         }
     }
@@ -43,7 +42,7 @@ export const CalCaliApp = () => {
         setCheckBox(newCheckBoxValue);
 
         const selectedCheckBox = newCheckBoxValue.filter((val) => val);
-        const points = Math.round(selectedCheckBox.length * 1.66);
+        const points = selectedCheckBox.length * 2.5;
         setTotalPointsCheck(points);
     }
 
@@ -92,7 +91,7 @@ export const CalCaliApp = () => {
                             <TableCell align='center'>{totalPointsCheck}</TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell colSpan={7} align="center">Total de puntos de los criterios Prácticas realizadas en clases y trabajo independiente</TableCell>
+                            <TableCell colSpan={5} align="center">Total de puntos de los criterios Prácticas realizadas en clases y trabajo independiente</TableCell>
                             <TableCell align='center'>{totalPointsSum()}</TableCell>
                         </TableRow>
                     </TableBody>

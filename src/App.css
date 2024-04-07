@@ -7,6 +7,12 @@
 body {
   background-color: #5f9e61;
 }
+.color {
+  color: white;
+}
+.color:hover {
+  color: whitesmoke;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
