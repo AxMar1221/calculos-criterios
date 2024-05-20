@@ -4,14 +4,16 @@ import Swal from "sweetalert2";
 
 export const CalCaliApp = () => {
     const practicas = [
-        "6: Be cool",
-        "7: Welcome to internet",
-        "8: Tejiendo la red",
-        "9: Packets",
-        "10: HTTP and DNS",
-        "11: Explorando Routers"
+        "12: Ralph WIFI",
+        "13: Datos",
+        "14: Políticas de privacidad",
+        "15: Riesgos de seguridad",
+        "16: El valor de la privacidad",
+        "17: Caesar Cipher",
+        "18: Descifrando mensajes",
+        "19: Explorando la Ciber Ciudadanía"
     ];
-    const checkboxes = [1, 2, 3, 4, 5, 6];
+    const checkboxes = [1, 2, 3, 4, 5, 6, 7, 8];
 
     const [values, setValue] = useState(Array(6).fill(''));
     const [checkBox, setCheckBox] = useState(Array(6).fill(''));
@@ -23,7 +25,7 @@ export const CalCaliApp = () => {
         const typeValue = parseInt(value, 10);
 
         if (!isNaN(typeValue) && typeValue >= 0) {
-            const maxPoints = [20, 20, 5, 20, 25, 20];
+            const maxPoints = [10, 10, 20, 20, 10, 20, 10, 10, 10];
 
             const limitPoints = Math.min(typeValue, maxPoints[idx]);
 
@@ -32,7 +34,7 @@ export const CalCaliApp = () => {
             setValue(newValue);
 
             const points = newValue.reduce((acc, val) => acc + (parseFloat(val) || 0), 0);
-            const total = Math.floor((points / 110) * 40);
+            const total = Math.floor((points / 120) * 40);
             setTotalPoints(total)
         }
     }
@@ -43,7 +45,7 @@ export const CalCaliApp = () => {
         setCheckBox(newCheckBoxValue);
 
         const selectedCheckBox = newCheckBoxValue.filter((val) => val);
-        const points = Math.round(selectedCheckBox.length * 1.66);
+        const points = Math.round(selectedCheckBox.length * 1.25);
         setTotalPointsCheck(points);
     }
 
