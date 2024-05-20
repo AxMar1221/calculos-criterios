@@ -34,7 +34,7 @@ export const CalCaliApp = () => {
             setValue(newValue);
 
             const points = newValue.reduce((acc, val) => acc + (parseFloat(val) || 0), 0);
-            const total = Math.floor((points / 120) * 40);
+            const total = Math.floor((points / 110) * 40);
             setTotalPoints(total)
         }
     }
