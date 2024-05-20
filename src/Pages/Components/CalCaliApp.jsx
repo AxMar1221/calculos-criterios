@@ -15,8 +15,8 @@ export const CalCaliApp = () => {
     ];
     const checkboxes = [1, 2, 3, 4, 5, 6, 7, 8];
 
-    const [values, setValue] = useState(Array(6).fill(''));
-    const [checkBox, setCheckBox] = useState(Array(6).fill(''));
+    const [values, setValue] = useState(Array(8).fill(''));
+    const [checkBox, setCheckBox] = useState(Array(8).fill(''));
     const [totalPoints, setTotalPoints] = useState(0);
     const [totalPointsCheck, setTotalPointsCheck] = useState(0);
 
