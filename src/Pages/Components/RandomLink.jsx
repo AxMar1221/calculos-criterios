@@ -1,9 +1,9 @@
 import { Box, Button, Typography } from '@mui/material';
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 
 export const RandomLink = () => {
-  I
+  
   const links = [
     'https://www.google.com',
     'https://www.openai.com',
