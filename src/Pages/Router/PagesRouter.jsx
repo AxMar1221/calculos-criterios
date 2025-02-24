@@ -6,8 +6,9 @@ export const PagesRouter = () => {
     <>
         <Routes>
             <Route path='/home' element={<HomePage />}/>
-            <Route path='/info' element={<CalCaliApp />}/>
-            <Route path='/poo' element={<CaliPooApp />}/>
+            <Route path='/links' element={<CalCaliApp />}/>
+            {/* <Route path='/info' element={<CalCaliApp />}/> */}
+            {/* <Route path='/poo' element={<CaliPooApp />}/> */}
 
             <Route path='/*' element={<HomePage />}/>
         </Routes>

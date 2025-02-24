@@ -23,6 +23,14 @@ export const NavBarApp = () => {
             <MenuItem sx={{ borderRadius: 3 }}>
               <NavLink
                 className='color'
+                to='links'
+              >
+                Obtener link
+              </NavLink>
+            </MenuItem>
+            {/* <MenuItem sx={{ borderRadius: 3 }}>
+              <NavLink
+                className='color'
                 to='info'
               >
                 Información digital, Internet y Big Data
@@ -35,7 +43,7 @@ export const NavBarApp = () => {
               >
                 Programación Orientada a Objetos
               </NavLink>
-            </MenuItem>
+            </MenuItem> */}
           </Toolbar>
         </Container>
       </AppBar>
