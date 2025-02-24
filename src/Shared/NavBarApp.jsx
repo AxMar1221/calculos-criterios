@@ -23,7 +23,7 @@ export const NavBarApp = () => {
             <MenuItem sx={{ borderRadius: 3 }}>
               <NavLink
                 className='color'
-                to='/vinculo'
+                to='/info'
               >
                 Obtener link
               </NavLink>

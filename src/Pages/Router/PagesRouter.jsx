@@ -6,7 +6,7 @@ export const PagesRouter = () => {
     <>
         <Routes>
             <Route path='/home' element={<HomePage />}/>
-            <Route path='/vinculo' element={<RandomLink />}/>
+            <Route path='/info' element={<RandomLink />}/>
             {/* <Route path='/info' element={<CalCaliApp />}/> */}
             {/* <Route path='/poo' element={<CaliPooApp />}/> */}
 
