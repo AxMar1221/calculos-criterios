@@ -4,9 +4,16 @@ import { useState } from 'react'
 export const RandomLink = () => {
 
   const links = [
-    'https://www.google.com',
-    'https://www.openai.com',
-    'https://www.github.com'
+    'https://studio.code.org/projects/applab/dAw5oMghx1X9xc15qkhDugAQk57ywbIQs9QW4ohJc6Y',
+    'https://studio.code.org/projects/applab/dAw5oMghx1X9xc15qkhDuslsUaBJhVE-StL7_qnSB2M',
+    'https://studio.code.org/projects/applab/4HDxQySnFryW6VV-k70cTGeBHewr8DVLNtFarfdDhQk',
+    'https://studio.code.org/projects/applab/4HDxQySnFryW6VV-k70cTBUykiCWWRkcyiUOQpMQkmw',
+    'https://studio.code.org/projects/applab/4HDxQySnFryW6VV-k70cTFOGquAxJaEJ0gRalFLD9_4',
+    'https://studio.code.org/projects/applab/v_lZNmI8oOJAS5m67oC3e4ssap0AamP0of0WEFYGG78',
+    'https://studio.code.org/projects/applab/v_lZNmI8oOJAS5m67oC3e7SYBrj37PQDDmGXdFFtUlQ',
+    'https://studio.code.org/projects/applab/v_lZNmI8oOJAS5m67oC3e4hmFz9oS5THpv_LxzgmcM0',
+    'https://studio.code.org/projects/applab/v_lZNmI8oOJAS5m67oC3ewDRqRcQz43tHyfl-grwgP8',
+    'https://studio.code.org/projects/applab/v_lZNmI8oOJAS5m67oC3e4sAlYhbXyYWZJ87l5oV4DM'
   ];
 
   const [selectedLink, setSelectedLink] = useState('');
