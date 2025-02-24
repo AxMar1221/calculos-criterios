@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { CalCaliApp, CaliPooApp, HomePage, RandomLink } from "../Components"
+import { HomePage, RandomLink,} from "../Components"
 
 export const PagesRouter = () => {
   return (

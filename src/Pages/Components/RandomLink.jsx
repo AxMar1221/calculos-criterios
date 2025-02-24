@@ -1,4 +1,4 @@
-import { Box, Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import React, { useState } from 'react'
 
 
@@ -28,7 +28,13 @@ export const RandomLink = () => {
       <Button variant='contained' color='primary' onClick={handleSelectedLink}>
         Seleccionar link
       </Button>
-
+      { selectedLink && (
+        <>
+        <Typography variant='h6' mt={2}>
+          Link seleccionado: {selectedLink}
+        </Typography>
+        </>
+      )}
     </Box>
   )
 }
