@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom"
 export const NavBarApp = () => {
   return (
     <>
-      <AppBar color='success'>
+      <AppBar color='primary'>
         <Container maxWidth='xl'>
           <Toolbar
             disableGutters
@@ -23,20 +23,12 @@ export const NavBarApp = () => {
             <MenuItem sx={{ borderRadius: 3 }}>
               <NavLink
                 className='color'
-                to='links'
+                to='link'
               >
                 Obtener link
               </NavLink>
             </MenuItem>
             {/* <MenuItem sx={{ borderRadius: 3 }}>
-              <NavLink
-                className='color'
-                to='info'
-              >
-                Información digital, Internet y Big Data
-              </NavLink>
-            </MenuItem>
-            <MenuItem sx={{ borderRadius: 3 }}>
               <NavLink
                 className='color'
                 to='/poo'

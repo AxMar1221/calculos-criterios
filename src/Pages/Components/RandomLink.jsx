@@ -33,6 +33,14 @@ export const RandomLink = () => {
         <Typography variant='h6' mt={2}>
           Link seleccionado: {selectedLink}
         </Typography>
+        <Button
+          variant='contained'
+          color='secondary'
+          onClick={handleOpenLink}
+          sx={{ mt: 2}}
+        >
+          Abrir link
+        </Button>
         </>
       )}
     </Box>
